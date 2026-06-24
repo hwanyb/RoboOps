@@ -1,5 +1,6 @@
 "use client";
 
+import { useShallow } from "zustand/react/shallow";
 import { useRobotStore, selectRobotList } from "@/store/robotStore";
 import StatusBadge from "@/components/ui/StatusBadge";
 import BatteryBar from "@/components/ui/BatteryBar";
@@ -13,7 +14,7 @@ const TYPE_ICON: Record<Robot["type"], string> = {
 };
 
 export default function RobotList() {
-  const robots = useRobotStore(selectRobotList);
+  const robots = useRobotStore(useShallow(selectRobotList));
   const selectedRobotId = useRobotStore((s) => s.selectedRobotId);
   const selectRobot = useRobotStore((s) => s.selectRobot);
 

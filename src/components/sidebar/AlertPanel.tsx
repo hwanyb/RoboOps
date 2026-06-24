@@ -1,5 +1,6 @@
 "use client";
 
+import { useShallow } from "zustand/react/shallow";
 import { useRobotStore, selectUnacknowledgedAlerts } from "@/store/robotStore";
 import type { AlertSeverity } from "@/types/alert";
 
@@ -18,7 +19,7 @@ const SEVERITY_TEXT: Record<AlertSeverity, string> = {
 };
 
 export default function AlertPanel() {
-  const alerts = useRobotStore(selectUnacknowledgedAlerts);
+  const alerts = useRobotStore(useShallow(selectUnacknowledgedAlerts));
   const acknowledgeAlert = useRobotStore((s) => s.acknowledgeAlert);
   const clearAcknowledgedAlerts = useRobotStore((s) => s.clearAcknowledgedAlerts);
 

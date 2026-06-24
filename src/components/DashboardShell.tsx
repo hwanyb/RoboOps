@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import { useShallow } from "zustand/react/shallow";
 import { useRobotStore, selectRobotList, selectUnacknowledgedAlerts } from "@/store/robotStore";
 import RobotList from "@/components/sidebar/RobotList";
 import AlertPanel from "@/components/sidebar/AlertPanel";
@@ -20,8 +21,8 @@ type SideTab = "robots" | "alerts" | "detail";
 
 export default function DashboardShell() {
   const [activeTab, setActiveTab] = useState<SideTab>("robots");
-  const robots = useRobotStore(selectRobotList);
-  const alerts = useRobotStore(selectUnacknowledgedAlerts);
+  const robots = useRobotStore(useShallow(selectRobotList));
+  const alerts = useRobotStore(useShallow(selectUnacknowledgedAlerts));
   const selectedRobotId = useRobotStore((s) => s.selectedRobotId);
 
   const onlineCount = robots.filter((r) => r.status !== "offline").length;
