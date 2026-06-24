@@ -32,15 +32,18 @@
 
 ### Three.js 3D 뷰어
 <img width="269" height="207" alt="image" src="https://github.com/user-attachments/assets/d2e2ab8c-8ebd-4a12-be42-3c7b4667d7d0" />
+
 - 로봇 타입(AMR / AGV / ARM / DRONE)마다 다른 3D 메시 렌더링
 - 센서 감지 범위를 반투명 콘으로 시각화
 - 자동 회전 애니메이션, 상태 변경 시 색상 실시간 반영
 
 ### 사이드패널
 - **Robots 탭**: 전체 로봇 목록, 상태 뱃지, 배터리 바
-- <img width="284" height="455" alt="image" src="https://github.com/user-attachments/assets/4b0fab38-23a4-4702-92a4-d2262b6c4ef9" />
+<img width="284" height="455" alt="image" src="https://github.com/user-attachments/assets/4b0fab38-23a4-4702-92a4-d2262b6c4ef9" />
+
 - **Alerts 탭**: 미확인 알림 목록, 개별 확인(Acknowledge) 및 전체 삭제
 <img width="305" height="369" alt="image" src="https://github.com/user-attachments/assets/f73a88d6-7de1-4f8a-bcb7-abcaf77f70d4" />
+
 - **Detail 탭**: 선택 로봇의 3D 뷰, 위치·배터리·작업 진행률 상세 정보
 <img width="286" height="642" alt="image" src="https://github.com/user-attachments/assets/f122ab03-5f0d-455c-9f08-7eb982b62441" />
 
