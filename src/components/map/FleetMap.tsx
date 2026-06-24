@@ -13,6 +13,7 @@ import { Style, Circle, Fill, Stroke, Text } from "ol/style";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
 
+import { useShallow } from "zustand/react/shallow";
 import { useRobotStore, selectRobotList } from "@/store/robotStore";
 import { getStatusColor } from "@/lib/statusUtils";
 import type { Robot, RobotStatus } from "@/types/robot";
@@ -61,7 +62,7 @@ export default function FleetMap() {
   const olMapRef = useRef<Map | null>(null);
   const vectorSourceRef = useRef<VectorSource | null>(null);
 
-  const robots = useRobotStore(selectRobotList);
+  const robots = useRobotStore(useShallow(selectRobotList));
   const selectedRobotId = useRobotStore((s) => s.selectedRobotId);
   const selectRobot = useRobotStore((s) => s.selectRobot);
 
